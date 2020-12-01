@@ -17,11 +17,12 @@ switch(empCheck)
         return 0;
 }
 }
-for (let day = 0 ; day < NUM_OF_WORKING_DAYS; day++)
+while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
 {
+    totalWorkingDays++;
     let empCheck = Math.floor(Math.random()*10)%3;
-    empHrs += getWorkingHours(empCheck);
+    totalEmpHrs += getWorkingHours(empCheck);
 }
-
 let empWage = empHrs * WAGE_PER_HOUR;
-console.log("Total Hours"+empHrs+"Emp Wage"+empWage);
+totalEmpHrs += totalEmpHrs + WAGE_PER_HOURS ;
+console.log("Uc5-Total Days:"+totalWorkingDays+"Total Hours: "+totalEmpHrs+"Emp Wage:"+empWage);
